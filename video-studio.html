@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101722">
+  <title>The Daily Word | Prince Oscar Video Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css"><link rel="stylesheet" href="daily-word-theme.css">
+  <link rel="stylesheet" href="video-studio.css">
+</head>
+<body class="workspace-page video-studio-page">
+  <div class="site">
+    <header class="header">
+      <a class="brand" href="index.html"><img class="brandmark" src="assets/my-logo.png" alt="Prince Oscar logo"><span><b>THE DAILY WORD</b><small>A YEAR IN SCRIPTURE</small></span></a>
+      <nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="study.html">Study</a><a href="bible.html">Bible</a><a href="prayer.html">Prayer</a><a href="discover.html">Discover</a><a href="plan.html">Plan</a><a href="game.html">Quiz</a><a href="assistant.html">Storyboard</a></nav>
+      <div class="header-right"><span class="counter">CREATOR <b>SPACE</b></span></div>
+    </header>
+    <main class="video-workspace">
+      <aside class="video-rail">
+        <div class="rail-label">PRINCE OSCAR · AI</div>
+        <h2>Your Scripture video desk.</h2>
+        <p>Create a short visual clip from a Bible passage with a private, local connection to Runway.</p>
+        <hr>
+        <a href="#brief">01 &nbsp; Video brief</a><a href="#create">02 &nbsp; Generate clip</a><a href="#result">03 &nbsp; Preview & save</a>
+        <div class="rail-note"><b>Private to this computer</b><p>The server listens only on this computer. Your Runway key stays in its local .env file and is never sent to the page.</p></div>
+      </aside>
+      <div class="video-main">
+        <div class="page-eyebrow"><span>PRINCE OSCAR · VIDEO GENERATOR</span><span id="connectionState">CHECKING LOCAL GENERATOR…</span></div>
+        <section class="video-hero">
+          <div class="hero-sigil">✳</div>
+          <div><span class="eyebrow">THE DAILY WORD · CREATOR DESK</span><h1>Bring the passage to life.</h1><p>Describe one faithful visual moment. Prince Oscar will send it to the video generator, then return a downloadable MP4.</p></div>
+          <a class="back-storyboard" href="assistant.html">Open storyboard ↗</a>
+        </section>
+        <section id="brief" class="video-brief">
+          <div class="section-head"><div><span class="eyebrow">01 · SET THE SCENE</span><h2>What should your clip show?</h2></div><span class="local-badge">LOCAL APP</span></div>
+          <div class="video-form-grid">
+            <div><label for="clipTitle">PROJECT NAME</label><input id="clipTitle" class="video-input" maxlength="100" value="Peace in the storm" placeholder="Name this clip"></div>
+            <div><label for="clipPassage">BIBLE PASSAGE</label><input id="clipPassage" class="video-input" maxlength="120" value="Mark 4:35–41" placeholder="e.g. Mark 4:35–41"></div>
+          </div>
+          <label for="clipPrompt">VISUAL DIRECTION <span>· 1,000 characters max</span></label>
+          <textarea id="clipPrompt" class="video-input video-prompt" maxlength="1000">A reverent cinematic biblical scene inspired by Mark 4:35–41: a small wooden fishing boat on the Sea of Galilee at night, waves settling under a quiet star-filled sky, painterly realism, gentle camera push-in, deep blue and warm gold light, no written text.</textarea>
+          <div class="video-form-grid generation-options">
+            <div><label for="clipModel">MODEL</label><select id="clipModel" class="video-input"><option value="gen4_turbo" data-rate="5">Gen-4 Turbo · standard</option><option value="gen4.5" data-rate="12">Gen-4.5 · high quality</option></select></div>
+            <div><label for="clipRatio">FRAME</label><select id="clipRatio" class="video-input"><option value="1280:720">Landscape · 16:9</option><option value="720:1280">Portrait · 9:16</option></select></div>
+            <div><label for="clipDuration">LENGTH</label><select id="clipDuration" class="video-input"><option value="5">5 seconds</option><option value="10">10 seconds</option></select></div>
+          </div>
+          <div id="create" class="price-confirm">
+            <div class="estimate"><span class="eyebrow">ESTIMATED CHARGE</span><b id="estimateAmount">25 credits · about $0.25</b><small>Runway credits are currently priced at $0.01 each. Your provider’s final charge may differ.</small></div>
+            <label class="confirm-charge"><input id="confirmCharge" type="checkbox"><span>I approve this estimated charge and understand my prompt is sent to Runway.</span></label>
+          </div>
+          <div class="video-actions"><button id="createVideo" class="create-video" disabled>Generate AI video →</button><span id="generationStatus" role="status" aria-live="polite">Checking local service…</span></div>
+          <div class="provider-notice"><b>How this works</b><p>Prince Oscar runs locally on this computer. The requested video prompt is sent to Runway Dev for generation; your Bible notes, prayers, and other site data are not sent. Generated MP4s are saved in this site’s <code>generated-videos</code> folder.</p></div>
+        </section>
+        <section id="result" class="video-result" hidden>
+          <div class="section-head"><div><span class="eyebrow">03 · YOUR GENERATED CLIP</span><h2 id="resultTitle">Video preview</h2></div><a id="downloadVideo" class="download-video" href="#" download>↓ &nbsp; Download MP4</a></div>
+          <video id="videoPreview" controls playsinline preload="metadata"></video>
+          <p class="video-save-note">The file is copied to this computer when the preview is loaded. You can download it again at any time from this browser session.</p>
+        </section>
+        <p class="video-disclaimer">Generated visuals are illustrative. Check the Bible passage and all teaching claims in context. This local prototype does not generate narration, captions, or a finished multi-scene edit yet.</p>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script src="video-studio.js"></script>
+</body>
+</html>

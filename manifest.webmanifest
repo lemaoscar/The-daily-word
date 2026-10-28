@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "Daily Word — Scripture, study, and prayer",
+  "short_name": "Daily Word",
+  "description": "A private, offline-friendly space to read Scripture, reflect, and pray.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#101722",
+  "icons": [
+    {
+      "src": "/assets/daily-word-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/daily-word-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

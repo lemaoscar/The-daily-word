@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Optional, end-to-end encrypted Daily Word sync between your devices.">
+  <meta name="theme-color" content="#101722">
+  <title>Daily Word — Encrypted cloud sync</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="daily-word-theme.css">
+  <link rel="stylesheet" href="cloud-sync.css">
+</head>
+<body class="workspace-page sync-page">
+  <div class="site">
+    <header class="header">
+      <a class="brand" href="index.html"><img class="brandmark" src="assets/my-logo.png" alt=""><span><b>DAILY WORD</b><small>A YEAR IN SCRIPTURE</small></span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="study.html">Study</a><a href="bible.html">Bible</a><a href="prayer.html">Prayer</a>
+        <a href="sermon-notes.html">Sermons</a><a href="discover.html">Discover</a><a href="plan.html">Plan</a><a href="game.html">Quiz</a>
+      </nav>
+      <div class="header-right"><span class="counter">OPTIONAL <b>SYNC</b></span></div>
+    </header>
+    <main class="workspace">
+      <aside class="workspace-rail">
+        <div class="rail-label">YOUR DEVICES</div><h2>One private library.</h2>
+        <p>Sign in to sync encrypted Daily Word data across browsers you control.</p><hr>
+        <a href="#setup">Set up a project</a><a href="#account">Sign in</a><a href="#sync">Sync data</a>
+        <div class="rail-note"><b>End-to-end encrypted</b><p>Your sync passphrase is never sent. Supabase stores only an encrypted backup envelope.</p></div>
+      </aside>
+      <div class="workspace-main">
+        <div class="page-eyebrow"><span>OPTIONAL PRIVATE CLOUD SYNC</span><span>ENCRYPTED BEFORE UPLOAD</span></div>
+        <section class="sync-hero">
+          <span class="eyebrow">YOUR ACCOUNT · YOUR KEY</span><h1>Take your notes with you.</h1>
+          <p>Set up your own Supabase project, sign in with an email link, and manually sync an encrypted copy. Daily Word never receives a server password or a copy of your sync passphrase.</p>
+        </section>
+        <div class="sync-grid">
+          <section id="setup" class="sync-card">
+            <span class="eyebrow">ONE-TIME SETUP</span><h2>Connect your Supabase project</h2>
+            <p>Create a Supabase project, run <code>supabase-daily-word.sql</code> in its SQL Editor, and add this app address to Authentication → URL Configuration → Redirect URLs.</p>
+            <form id="cloudConfigForm">
+              <label>Project URL<input name="projectUrl" type="url" autocomplete="url" placeholder="https://your-project.supabase.co" required></label>
+              <label>Publishable / anon key<input name="anonKey" type="password" autocomplete="off" placeholder="Public client key · never service_role" required></label>
+              <div class="sync-actions"><button class="sync-primary" type="submit">Save project settings</button></div>
+            </form>
+            <p class="sync-private-note">The public client key is stored in this browser only. Never enter a service_role or secret key here.</p>
+          </section>
+          <section id="account" class="sync-card">
+            <span class="eyebrow">PRIVATE SIGN-IN</span><h2>Your Daily Word account</h2>
+            <div id="cloudSignedOut">
+              <p>Enter your email to receive a secure sign-in link from your own Supabase project.</p>
+              <form id="cloudEmailForm">
+                <label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></label>
+                <div class="sync-actions"><button id="cloudEmailSubmit" class="sync-primary" type="submit">Email me a sign-in link</button></div>
+              </form>
+            </div>
+            <div id="cloudSignedIn" hidden>
+              <div class="profile-summary"><img id="cloudAvatar" alt="Your profile image" hidden><video id="cloudProfileVideo" controls playsinline preload="metadata" aria-label="Your profile video" hidden></video><span id="cloudAvatarFallback" aria-hidden="true">DW</span><span class="profile-identity"><strong id="cloudDisplayName">Daily Word member</strong><small id="cloudUser"></small></span></div>
+              <p>Your profile is optional. Your name and photo are attached to this account and stored in your Supabase project.</p>
+              <p class="profile-private-label"><b>Private profile:</b> only you can view this information in Daily Word.</p>
+              <form id="cloudProfileForm" class="profile-form">
+                <label>Display name<input id="cloudProfileName" name="displayName" maxlength="80" autocomplete="name" placeholder="How should Daily Word address you?"></label>
+                <label>Country or region<input id="cloudProfileRegion" name="region" maxlength="100" autocomplete="country-name" placeholder="Optional"></label>
+                <label>About me<textarea id="cloudProfileAbout" name="about" maxlength="500" rows="3" placeholder="Share a little about yourself, if you wish."></textarea></label>
+                <label>Profile image or video<input id="cloudProfilePhoto" name="photo" type="file" accept="image/*,video/mp4,video/webm,video/quicktime"></label>
+                <small class="photo-hint">Choose an image or MP4, WebM, or QuickTime video. Images are resized on this device; videos are uploaded privately up to 50 MB. The subject matter is your choice.</small>
+                <div class="sync-actions"><button class="sync-primary" type="submit" id="cloudProfileSave">Save profile</button><button type="button" id="cloudPhotoRemove">Remove photo</button></div>
+              </form>
+              <p class="profile-status" id="cloudProfileStatus" role="status" aria-live="polite"></p>
+              <p class="sync-private-note">Your sign-in email is managed by Supabase. You do not need to share photos or personal details in this chat.</p>
+              <div class="sync-actions"><button type="button" id="cloudSignOut">Sign out</button></div>
+            </div>
+          </section>
+          <section id="sync" class="sync-card">
+            <span class="eyebrow">ENCRYPT & SYNC</span><h2>Keep devices in step</h2>
+            <p>Use the same strong passphrase on each device. It encrypts all supported Daily Word data locally with AES-GCM before anything is uploaded.</p>
+            <label for="cloudPassphrase">Sync passphrase</label>
+            <input id="cloudPassphrase" type="password" minlength="12" maxlength="1024" autocomplete="new-password" placeholder="At least 12 characters">
+            <div class="sync-actions"><button type="button" class="sync-primary" id="cloudSyncNow">Sync now</button><button type="button" class="sync-danger" id="cloudDelete">Delete cloud copy</button></div>
+          </section>
+          <section class="sync-card">
+            <span class="eyebrow">YOU ARE IN CONTROL</span><h2>How sync works</h2>
+            <ul>
+              <li>Sign-in uses an email link. Display name and profile photo are optional.</li>
+              <li>Your data is encrypted in this browser; the passphrase never leaves it.</li>
+              <li>Sync is manual. On conflicts, notes and saved lists are merged conservatively.</li>
+              <li>Local device data remains available if you sign out or lose internet.</li>
+              <li>Keep an encrypted file backup too. Forgetting the passphrase means the cloud copy cannot be recovered.</li>
+            </ul>
+          </section>
+          <p id="cloudStatus" class="sync-status" role="status" aria-live="polite">Cloud sync is optional and not yet connected.</p>
+        </div>
+        <p class="sync-warning"><b>Important:</b> this sync service is not configured until you create a Supabase project and apply the included SQL. Do not deploy the local video generator publicly. Do not use shared/public devices for personal prayer or counseling notes.</p>
+      </div>
+    </main>
+  </div>
+  <script src="data-protection.js"></script>
+  <script src="app.js"></script>
+  <script src="cloud-sync-core.js"></script>
+  <script src="cloud-sync.js"></script>
+</body>
+</html>

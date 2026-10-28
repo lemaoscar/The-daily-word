@@ -1,0 +1,44 @@
+.sync-page .workspace-main{max-width:980px}
+.sync-hero{margin:12px 0 18px;padding:clamp(24px,4vw,40px);border:1px solid #dfe9df;border-radius:20px;background:radial-gradient(ellipse at 86% 20%,#fff8df 0,transparent 35%),linear-gradient(135deg,#eaf2e9,#f8f6ec)}
+.sync-hero h1{margin:8px 0;color:#24463a;font:600 clamp(29px,4vw,43px)/1.08 var(--display);letter-spacing:-1.3px}
+.sync-hero p{max-width:65ch;color:#627369;font:13px/1.7 var(--sans)}
+.sync-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.sync-card{min-width:0;padding:20px;border:1px solid #e4e9e2;border-radius:15px;background:#fff;box-shadow:0 12px 30px #21372a0a}
+.sync-card h2{margin:5px 0 8px;color:#2c463b;font:600 19px var(--display)}
+.sync-card p,.sync-card li{color:#718078;font:11px/1.7 var(--sans)}
+.sync-card form{display:grid;gap:10px;margin-top:12px}
+.sync-card label{display:grid;gap:5px;color:#57685d;font:600 10px var(--sans)}
+.sync-card input{width:100%;min-height:40px;padding:10px;border:1px solid #dfe6dc;border-radius:8px;background:#fcfdfb;color:#2c4035;font:12px var(--sans)}
+.sync-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.sync-actions button{min-height:38px;padding:9px 13px;border:1px solid #d9e3d9;border-radius:8px;background:#f5f8f4;color:#38644e;font:700 10px var(--sans);cursor:pointer}
+.sync-actions .sync-primary{border-color:#3a7256;background:#41775c;color:#fff}
+.sync-actions button:disabled{opacity:.55;cursor:wait}
+.sync-status{grid-column:1/-1;min-height:19px;margin:0;padding:12px 14px;border:1px solid #e0e8df;border-radius:9px;background:#f7faf6;color:#526c5a;font:11px/1.5 var(--sans)}
+.sync-status[data-state=error]{border-color:#ead6d3;background:#fff8f6;color:#a34840}
+.sync-warning{margin-top:15px;padding:14px;border-left:3px solid #c79a5e;background:#fbf6ed;color:#6b5940;font:11px/1.7 var(--sans)}
+.sync-danger{color:#9a4d42!important;border-color:#ead6d3!important}
+.sync-private-note{font-size:10px!important}
+.profile-summary{display:flex;align-items:center;gap:12px;margin:12px 0;padding:12px;border:1px solid #e3e9e1;border-radius:10px;background:#f8faf6}
+.profile-summary img,.profile-summary video,.profile-summary>span:first-of-type{width:64px;height:64px;flex:none;border-radius:50%;object-fit:cover;background:#172d25}
+.profile-summary>span:first-of-type{display:grid;place-items:center;background:#e4eee5;color:#426b51;font:700 14px var(--display)}
+.profile-summary :is(img,video)[hidden]{display:none}
+.profile-identity{display:grid;gap:4px;min-width:0}
+.profile-identity strong{overflow-wrap:anywhere;color:#334b3b;font:700 12px var(--sans)}
+.profile-identity small{overflow-wrap:anywhere;color:#748078;font:10px var(--sans)}
+.profile-form{padding:12px;border:1px solid #e7ece5;border-radius:10px}
+.profile-form textarea{width:100%;min-height:75px;padding:10px;border:1px solid #dfe6dc;border-radius:8px;background:#fcfdfb;color:#2c4035;font:12px/1.55 var(--sans);resize:vertical}
+.profile-private-label{padding:9px 10px;border-left:3px solid #71977a;background:#f4f8f2}
+.photo-hint,.profile-status{color:#748078;font:10px/1.6 var(--sans)}
+.profile-status[data-state=error]{color:#a34840}
+html[data-theme=dark] .profile-summary,html[data-theme=dark] .profile-form{border-color:#38483b;background:#202c24}
+html[data-theme=dark] .profile-form textarea{border-color:#46564a;background:#202c24;color:#e5ece5}
+html[data-theme=dark] .profile-private-label{border-color:#71977a;background:#29372c;color:#c7ddc9}
+html[data-theme=dark] .profile-identity strong{color:#e0e9df}
+html[data-theme=dark] .profile-identity small,html[data-theme=dark] .photo-hint,html[data-theme=dark] .profile-status{color:#b4bfb4}
+@media(max-width:680px){.sync-grid{grid-template-columns:1fr}.sync-status{grid-column:auto}.sync-card{padding:17px}}
+html[data-theme=dark] .sync-hero{border-color:#35483a;background:radial-gradient(ellipse at 86% 20%,#465034 0,transparent 35%),linear-gradient(135deg,#233329,#20291f)}
+html[data-theme=dark] .sync-hero h1,html[data-theme=dark] .sync-card h2{color:#e0e9df}
+html[data-theme=dark] .sync-hero p,html[data-theme=dark] .sync-card p,html[data-theme=dark] .sync-card li{color:#b4bfb4}
+html[data-theme=dark] .sync-card{border-color:#32423a;background:#1b251e}
+html[data-theme=dark] .sync-status{border-color:#38483b;background:#202c24;color:#c7ddc9}
+html[data-theme=dark] .sync-warning{border-color:#a7864b;background:#29281f;color:#e3d1a5}

@@ -1,0 +1,108 @@
+:root{--blue:#357663;--navy:#284d44;--ink:#293b34;--muted:#758278;--line:#e1e6df;--paper:#f3f5f1}
+body{background:var(--paper);color:var(--ink)}
+.site-footer{color:#79847d}
+.header{border-bottom-color:#e4e9e2}
+.nav a{font-size:11px;transition:background .16s ease,color .16s ease}
+.nav a:hover,.nav a.active{background:#e8f0e9;color:#34715c}
+.counter b{color:#34715c}
+.ask-link{border-color:#dbe5dc;background:#f8faf7;color:#466d57}
+.page-eyebrow,.rail-label,.eyebrow,.workspace-rail small,.quiet{color:#758179}
+.workspace-rail{border-right-color:#e4e9e2}
+.rail-note,.panel,.aside-card,.study-content>section,.study-head,.reader-toolbar,.reader-search,.scripture-reader,.marking-desk,.saved-marks,.plan-stats,.plan-list,.quiz-panel,.game-hero,.discover-search-panel,.resource-grid article,.prayer-compose,.reminder-card,.journal-section,.video-brief,.video-result{border-color:#e6e9e3}
+button,select,input,textarea{font:inherit}
+button{transition:background-color .15s ease,border-color .15s ease,color .15s ease,transform .15s ease}
+button:not(:disabled){touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #78a895;outline-offset:3px}
+input,select,textarea{accent-color:#417d65}
+.reader-toolbar,.reader-search,.scripture-reader,.marking-desk,.saved-marks,.panel,.aside-card,.prayer-compose,.reminder-card,.journal-section,.calendar-panel,.focus-reading,.launch,.plan-stats,.quiz-panel,.discover-search-panel,.resource-grid article,.video-brief,.video-result{box-shadow:0 12px 30px #21372a0a}
+.reader-location strong,.scripture-reader h1,.section-heading h2{color:#2c463b}
+.primary-button,.btn,.plan-primary{background:linear-gradient(135deg,#477e66,#32664f);box-shadow:0 6px 15px #32664f20}
+.primary-button:hover:not(:disabled),.btn:hover,.plan-primary:hover{background:#285b48}
+.site-footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:10px;line-height:1.75}
+.site-footer .footer-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.site-footer .footer-top>b{color:#425a4d;font:700 10px var(--display);letter-spacing:1px}
+.site-footer .footer-top>span{color:#818c83;font:8px var(--mono);letter-spacing:.35px}
+body.dw-modal-open{overflow:hidden}
+.dw-settings-trigger{flex:none;padding:8px 11px;border:1px solid #dfe5df;border-radius:8px;background:#fff;color:#486353;font:600 10px var(--sans);cursor:pointer}
+.dw-settings-trigger:hover{border-color:#bdd0c0;background:#f5f8f4}
+.dw-settings-trigger .dw-gear{margin-right:4px;font-size:12px}
+.dw-dialog{width:min(580px,calc(100% - 28px));max-width:580px;max-height:min(86dvh,820px);padding:0;overflow:auto;border:1px solid #e1e7df;border-radius:19px;background:#fbfcf9;color:#293b34;box-shadow:0 30px 100px #15231d47}
+.dw-dialog::backdrop{background:#14231d9c;backdrop-filter:blur(4px)}
+.dw-dialog-header{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:20px 21px 15px;border-bottom:1px solid #e8ebe6;background:#fbfcf9}
+.dw-dialog-header .eyebrow{margin:0;color:#718079;font:500 9px var(--mono);letter-spacing:1px}
+.dw-dialog-header h2{margin:5px 0 0;color:#2a4338;font:600 23px var(--display);letter-spacing:-.7px}
+.dw-dialog-close{display:grid;width:35px;height:35px;flex:none;place-items:center;border:1px solid #e1e6df;border-radius:10px;background:white;color:#43574c;font-size:20px;cursor:pointer}
+.dw-dialog-content{display:grid;gap:16px;padding:17px 21px 22px}
+.dw-settings-section{padding:16px;border:1px solid #e7ebe5;border-radius:13px;background:#fff}
+.dw-settings-section h3{margin:0 0 5px;color:#31483c;font:700 12px var(--display)}
+.dw-settings-section>p{margin:0;color:#748078;font:11px/1.6 var(--sans)}
+.dw-setting-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px}
+.dw-setting-row>span>strong{display:block;color:#34473c;font:600 11px var(--sans)}
+.dw-setting-row>span>small{display:block;margin-top:3px;color:#808980;font:10px/1.5 var(--sans)}
+.dw-select,.dw-password{width:190px;max-width:50%;min-height:38px;padding:8px 10px;border:1px solid #dce4da;border-radius:8px;background:#fff;color:#31463a;font:11px var(--sans)}
+.dw-backup-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.dw-action{min-height:39px;padding:9px 13px;border:1px solid #d9e3d9;border-radius:8px;background:#f5f8f4;color:#38644e;font:700 10px var(--sans);cursor:pointer}
+.dw-action:hover{border-color:#b4cfb9;background:#edf5ed}
+.dw-action-primary{border-color:#3a7256;background:#41775c;color:#fff}
+.dw-action-primary:hover{border-color:#2d5d44;background:#2f6449}
+.dw-action-danger{border-color:#ead6d3;background:#fff8f6;color:#994e43}
+.dw-action-danger:hover{border-color:#d4a9a0;background:#fef0ec}
+.dw-note{margin-top:10px!important;padding-top:9px;border-top:1px solid #eef0ec;color:#6d7a70!important;font-size:10px!important}
+.dw-backup-password{width:100%;max-width:none;margin-top:12px}
+.dw-import-input{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;clip-path:inset(50%)!important}
+.dw-settings-status{min-height:17px;margin:0;color:#526c5a;font:10px/1.5 var(--sans)}
+.dw-settings-status[data-state=error]{color:#a34840}
+.dw-dialog footer{padding:12px 21px 16px;border-top:1px solid #e8ebe6;color:#79837b;font:9px/1.6 var(--sans)}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.dw-calendar-download{margin-top:10px}
+.dw-calendar-help{display:block;margin-top:8px;color:#77817a;font:10px/1.55 var(--sans)}
+.dw-calendar-download:disabled{opacity:.6;cursor:not-allowed}
+html[data-theme=dark]{--ink:#e7eee8;--muted:#b3beb5;--line:#34443a;--paper:#121914}
+html[data-theme=dark] body{background:#121914;color:#e3eae4}
+html[data-theme=dark] .header{border-bottom-color:#324039}
+html[data-theme=dark] .brand,html[data-theme=dark] .workspace-rail h2,html[data-theme=dark] .page h1,html[data-theme=dark] .section-heading h2,html[data-theme=dark] .reader-location strong,html[data-theme=dark] .scripture-reader h1{color:#e5eee5}
+html[data-theme=dark] .nav a{color:#bac6bb}
+html[data-theme=dark] .nav a:hover,html[data-theme=dark] .nav a.active{background:#23362a;color:#a6d0b1}
+html[data-theme=dark] :is(.panel,.aside-card,.study-content>section,.study-head,.reader-toolbar,.reader-search,.scripture-reader,.marking-desk,.saved-marks,.plan-stats,.plan-list,.quiz-panel,.game-hero,.discover-search-panel,.resource-grid article,.prayer-compose,.reminder-card,.journal-section,.calendar-panel,.launch,.offline-card,.focus-reading){border-color:#32423a!important;background-color:#1b251e!important;color:#e2eae2!important}
+html[data-theme=dark] :is(.journey,.launch,.offline-card){box-shadow:0 12px 30px #00000017}
+html[data-theme=dark] :is(.lead,.workspace-rail p,.panel p,.aside-card p,.prayer-compose p,.focus-prompt,.offline-copy>p,.quiet,.count-tag,.section-heading p,.plan-disclaimer,.source-note,.home-footer,.calendar-foot,.focus-checkin .checkin-note,.resource-grid article p){color:#b4bfb4}
+html[data-theme=dark] :is(.launch b,.offline-copy>b,.calendar-heading h2,.focus-reading h2,.focus-theme,.calendar-navigation strong,.dw-settings-section h3){color:#e0e9df}
+html[data-theme=dark] :is(input,select,textarea,.control,.quiz-select,.index-select,.video-input){border-color:#46564a!important;background-color:#202c24!important;color:#e5ece5!important}
+html[data-theme=dark] :is(.workspace-rail,.rail-note,.step-line,.page-eyebrow,.footer-top){border-color:#35443b}
+html[data-theme=dark] :is(.nav a:hover,.nav a.active,.launch i,.calendar-day,.calendar-navigation button,.focus-references a){background-color:#25362b;color:#cae0ca}
+html[data-theme=dark] .calendar-day[aria-current=date]{border-color:#8bb89a;background:#304536;color:#e1f3df}
+html[data-theme=dark] .calendar-day.is-complete{background:#293b30;color:#c1dcc5}
+html[data-theme=dark] .focus-checkin{border-color:#47634f;background:linear-gradient(155deg,#254635,#172b20);color:#fff}
+html[data-theme=dark] .home-hero{filter:saturate(.88)}
+html[data-theme=dark] .offline-icon{background:#28382e;color:#b9d1c0}
+html[data-theme=dark] .dw-dialog{border-color:#3e4c40;background:#18221b;color:#e2ebe3}
+html[data-theme=dark] .dw-dialog-header{border-color:#344138;background:#18221b}
+html[data-theme=dark] .dw-dialog-header h2,html[data-theme=dark] .dw-setting-row>span>strong{color:#e2ebe3}
+html[data-theme=dark] .dw-settings-section,html[data-theme=dark] .dw-select,html[data-theme=dark] .dw-password,html[data-theme=dark] .dw-dialog-close{border-color:#3b4b3e;background:#202c23;color:#e4ebe4}
+html[data-theme=dark] .dw-settings-section h3{color:#d8e6d9}
+html[data-theme=dark] .dw-dialog footer{border-color:#344138}
+html[data-theme=dark] .dw-calendar-help{color:#bac5bb}
+html[data-theme=dark] .dw-settings-trigger{border-color:#425146;background:#1f2c23;color:#c4dac8}
+html[data-theme=dark] .site-footer,html[data-theme=dark] .site-footer .footer-top>b{color:#abb9ac}
+html[data-reader-size=large] .passage-text{font-size:calc(var(--reader-size,19px) + 2px)}
+html[data-reader-size=extra-large] .passage-text{font-size:calc(var(--reader-size,19px) + 4px)}
+html[data-theme=light] body.prayer-page{background:#f3f5f1;color:#293b34}
+html[data-theme=light] .prayer-page :is(.brand,.workspace-rail h2,.section-heading h2,.journal-section h2){color:#293b34}
+html[data-theme=light] .prayer-page :is(.brand small,.counter,.counter b,.nav a,.workspace-rail>p,.workspace-rail small,.rail-note p,.workspace-rail>a,.eyebrow,.rail-label,.page-eyebrow,.prayer-opening p,.reminder-card>p,.prompt-strip>span,.quiet,.reminder-status,.prayer-copy small,.prayer-check){color:#718078}
+html[data-theme=light] .prayer-page .nav a:hover,html[data-theme=light] .prayer-page .nav a.active{background:#e8f0e9;color:#34715c}
+html[data-theme=light] .prayer-page :is(.workspace-rail,.workspace-rail hr,.page-eyebrow,.prayer-opening){border-color:#e1e6df}
+html[data-theme=light] .prayer-page .workspace-rail>a:hover{background:#e8f0e9;color:#34715c}
+html[data-theme=light] .prayer-page :is(.prayer-compose,.prayer-item,.empty-state,.reminder-card){border-color:#e3e8e1;background:#fff;color:#34463a}
+html[data-theme=light] .prayer-page :is(.prayer-compose h2,.prayer-opening h1,.reminder-card h2,.prayer-copy p){color:#30463a}
+html[data-theme=light] .prayer-page .prompt-strip button{border-color:#e1e7df;background:#f7f9f6;color:#496452}
+html[data-theme=light] .prayer-page .prompt-strip button:hover{border-color:#b9cfbd;background:#eff5ef}
+html[data-theme=light] .prayer-page :is(.prayer-compose textarea,.reminder-controls input){border-color:#dfe5dd;background:#fff;color:#304136}
+html[data-theme=light] .prayer-page .prayer-compose textarea::placeholder{color:#89938a}
+html[data-theme=light] .prayer-page .reminder-card label{color:#5d7565}
+html[data-theme=light] .prayer-page .rail-note{border-color:#e3e8e1;background:#fafbf9}
+html[data-theme=light] .prayer-page .count-tag{background:#edf3ed;color:#55715c}
+html[data-theme=light] .prayer-page .primary-button{background:#41775c;color:#fff}
+html[data-theme=light] .prayer-page .primary-button:hover{background:#2f6449}
+html[data-theme=light] .prayer-page .empty-state{color:#6e7c71}
+@media(max-width:700px){.dw-settings-trigger{padding:7px 8px;font-size:9px}.dw-dialog{width:calc(100% - 18px);max-height:90dvh}.dw-dialog-header{padding:16px}.dw-dialog-content{padding:13px}.dw-dialog footer{padding-inline:16px}.site-footer{padding-bottom:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}

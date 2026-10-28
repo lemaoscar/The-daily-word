@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101722">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="A quiet, private space to read Scripture, reflect, pray, and grow at your own pace.">
+  <title>Daily Word — Make room for the Word</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/daily-word-192.png">
+  <link rel="icon" href="assets/my-logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css"><link rel="stylesheet" href="daily-word-theme.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body class="home-page">
+  <div class="site">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <img class="brandmark" src="assets/my-logo.png" alt="">
+        <span><b>DAILY WORD</b><small>A YEAR IN SCRIPTURE</small></span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="study.html">Study</a>
+        <a href="bible.html">Bible</a>
+        <a href="prayer.html">Prayer</a>
+        <a href="sermon-notes.html">Sermons</a>
+        <a href="discover.html">Discover</a>
+        <a href="plan.html">Plan</a>
+        <a href="game.html">Quiz</a>
+        <a href="assistant.html">AI Studio</a>
+      </nav>
+      <div class="header-right">
+        <span class="counter">YOUR JOURNEY <b id="yearDay">— / —</b></span>
+        <time id="localClock" class="local-clock" aria-label="Your local time"></time>
+        <a class="ask-link" href="assistant.html">✳ AI Studio</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="home-hero" aria-labelledby="welcomeTitle">
+        <div class="home-copy">
+          <div class="kicker" id="todayDate">YOUR DAILY SPACE · TODAY</div>
+          <h1 id="welcomeTitle">Make a little room<br>for the Word.</h1>
+          <p class="lead">Read a passage. Take a breath. Carry one good word with you into the day.</p>
+          <div class="home-actions">
+            <a href="study.html" id="todayStudyLink" class="btn">Begin today’s reading <span aria-hidden="true">→</span></a>
+            <a href="bible.html" class="lightlink">Open Bible reader</a>
+          </div>
+        </div>
+        <div class="home-note">A QUIET PLACE TO RETURN EVERY DAY</div>
+      </section>
+
+      <section class="journey" aria-label="Reading plan progress">
+        <div class="journey-copy">
+          <b>Walking with Jesus · <span id="currentMonth">—</span></b>
+          <small id="journeyDay">DAY — OF — · FLEXIBLE PACE</small>
+        </div>
+        <div class="bar" id="homeProgress" role="progressbar" aria-label="Completed readings this year" aria-valuemin="0" aria-valuemax="365" aria-valuenow="0">
+          <i id="yearProgress"></i>
+        </div>
+        <strong id="yearPercent">0 READINGS</strong>
+      </section>
+
+      <section class="home-focus" aria-labelledby="focusTitle">
+        <div class="focus-reading">
+          <div class="focus-kicker"><span class="focus-dot" aria-hidden="true"></span><span id="focusDate">TODAY’S READING</span></div>
+          <h2 id="focusTitle">Your next page is waiting.</h2>
+          <p class="focus-theme" id="focusTheme">A gentle, day-by-day journey through Scripture.</p>
+          <p class="focus-prompt" id="focusPrompt">Read slowly. Notice what stands out, and give yourself room to reflect.</p>
+          <div class="focus-references" id="focusReferences" aria-label="Today’s Bible readings"></div>
+          <a class="focus-link" id="focusStudyLink" href="study.html">Open today’s study <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <aside class="focus-checkin" aria-labelledby="checkinTitle">
+          <div class="checkin-emblem" aria-hidden="true">✳</div>
+          <p class="checkin-overline">ONE DAY AT A TIME</p>
+          <h3 id="checkinTitle">Your reading journey</h3>
+          <div class="checkin-stats">
+            <div><strong id="homeStreak">0</strong><span>DAY STREAK</span></div>
+            <div><strong id="homeDoneCount">0</strong><span>READINGS DONE</span></div>
+          </div>
+          <button type="button" class="checkin-button" id="homeComplete" aria-pressed="false">Mark today’s reading complete</button>
+          <p class="checkin-note">No pressure. Every return is a fresh start.</p>
+        </aside>
+      </section>
+
+      <section class="calendar-panel" aria-labelledby="calendarTitle">
+        <div class="calendar-heading">
+          <div>
+            <span class="eyebrow">YOUR DAYS, YOUR PACE</span>
+            <h2 id="calendarTitle">Reading calendar</h2>
+          </div>
+          <div class="calendar-navigation">
+            <button type="button" id="calendarPrevious" aria-label="Previous month">‹</button>
+            <strong id="calendarMonth" aria-live="polite"></strong>
+            <button type="button" id="calendarNext" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div id="readingCalendar" class="reading-calendar" role="grid" aria-label="Reading plan calendar"></div>
+        <div class="calendar-foot">
+          <span><i class="calendar-key calendar-key-today"></i> Today</span>
+          <span><i class="calendar-key calendar-key-done"></i> Reading complete</span>
+          <small id="calendarHint">Choose any reading day to open the plan.</small>
+        </div>
+      </section>
+
+      <div class="section-title">
+        <h2>Make this space your own</h2>
+        <span class="kicker">CHOOSE YOUR NEXT STEP</span>
+      </div>
+      <section class="launches" aria-label="Daily Word spaces">
+        <a class="launch" href="study.html"><i aria-hidden="true">▤</i><span><b>Today’s study</b><small>Read, reflect, and save notes privately</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="bible.html"><i aria-hidden="true">⌕</i><span><b>Bible reader</b><small>Search the included WEB and KJV texts</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="prayer.html"><i aria-hidden="true">♡</i><span><b>Prayer journal</b><small>Keep a personal prayer list on this device</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="sermon-notes.html"><i aria-hidden="true">✎</i><span><b>Sermon notebook</b><small>Remember messages, Scripture, and next steps</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="sync.html"><i aria-hidden="true">↗</i><span><b>Encrypted sync</b><small>Take your private Daily Word data across devices</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="discover.html"><i aria-hidden="true">♫</i><span><b>Discover</b><small>Find thoughtful worship and resources</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="assistant.html"><i aria-hidden="true">✳</i><span><b>Storyboard studio</b><small>Shape a Bible explainer video idea</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="plan.html"><i aria-hidden="true">365</i><span><b>Year plan</b><small>Follow a flexible day-by-day path</small></span><em aria-hidden="true">→</em></a>
+        <a class="launch" href="game.html"><i aria-hidden="true">⌘</i><span><b>Scripture quiz</b><small>Explore books and verses as you play</small></span><em aria-hidden="true">→</em></a>
+      </section>
+
+      <section class="offline-card" aria-label="Private offline app">
+        <div class="offline-icon" aria-hidden="true">⌂</div>
+        <div class="offline-copy">
+          <b>A little more room on your home screen.</b>
+          <p>Install Daily Word for a focused, offline-friendly experience. On iPhone or iPad, use Safari’s Share → Add to Home Screen.</p>
+          <p id="offlineStatus" class="offline-status" role="status" aria-live="polite">Your data stays private on this device.</p>
+        </div>
+        <button type="button" class="install-button" id="installApp" hidden>Install Daily Word</button>
+      </section>
+
+      <footer class="home-footer">
+        <span>DAILY WORD · A YEAR IN SCRIPTURE</span>
+        <span>Private by design · Your notes stay on this device</span>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/year-plan.js"></script>
+  <script src="app.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

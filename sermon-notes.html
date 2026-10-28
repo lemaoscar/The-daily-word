@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private notebook for sermon notes, Scripture references, and a thoughtful response.">
+  <meta name="theme-color" content="#101722">
+  <title>Daily Word — Sermon notebook</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="daily-word-theme.css">
+  <link rel="stylesheet" href="sermon-notes.css">
+</head>
+<body class="workspace-page sermon-page">
+  <div class="site">
+    <header class="header">
+      <a class="brand" href="index.html"><img class="brandmark" src="assets/my-logo.png" alt=""><span><b>DAILY WORD</b><small>A YEAR IN SCRIPTURE</small></span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="study.html">Study</a><a href="bible.html">Bible</a><a href="prayer.html">Prayer</a>
+        <a href="sermon-notes.html">Sermons</a><a href="discover.html">Discover</a><a href="plan.html">Plan</a><a href="game.html">Quiz</a>
+      </nav>
+      <div class="header-right"><span class="counter">YOUR NOTES <b>PRIVATE</b></span></div>
+    </header>
+    <main class="workspace">
+      <aside class="workspace-rail">
+        <div class="rail-label">SERMON NOTEBOOK</div><h2>Listen. Notice. Respond.</h2>
+        <p>Keep a record of what you hear and how you want to live it.</p><hr>
+        <a href="#capture">Capture a message</a><a href="#notebook">Your notebook</a>
+        <div class="rail-note"><b>Stored on this device</b><p>Entries are included in your encrypted Daily Word backup.</p></div>
+      </aside>
+      <div class="workspace-main">
+        <div class="page-eyebrow"><span>PERSONAL STUDY TOOL</span><span>REFLECT · REMEMBER · RESPOND</span></div>
+        <section class="sermon-hero">
+          <div><span class="eyebrow">SERMON NOTEBOOK</span><h1>Keep the words worth carrying.</h1><p>Capture a message, the Scripture it opened, and one faithful next step. Your entries stay private in this browser.</p></div>
+          <span class="sermon-privacy">Private · Device storage</span>
+        </section>
+        <div class="sermon-layout">
+          <section id="capture" class="sermon-form">
+            <span class="eyebrow">CAPTURE A MESSAGE</span><h2>What did you hear?</h2>
+            <p>Write for your own reflection. Sermon notes are personal and are not shared with a church or account.</p>
+            <form id="sermonForm">
+              <input id="sermonId" type="hidden">
+              <div class="sermon-fields">
+                <label>Message title<input name="title" maxlength="160" required placeholder="A title or main idea"></label>
+                <label>Speaker<input name="speaker" maxlength="120" placeholder="Optional"></label>
+                <label>Date<input name="date" type="date" required></label>
+                <label>Scripture reference<input name="reference" maxlength="160" placeholder="e.g. Psalm 23:1–6"></label>
+                <label class="wide">Key insight<textarea name="insight" maxlength="20000" placeholder="What is the central point you want to remember?"></textarea></label>
+                <label class="wide">Notes<textarea name="notes" maxlength="20000" placeholder="Observations, questions, connections…"></textarea></label>
+                <label class="wide">My response<textarea name="application" maxlength="20000" placeholder="What could this invite you to practice, reconsider, or pray about?"></textarea></label>
+              </div>
+              <div class="sermon-buttons"><button class="sermon-primary" id="sermonSave" type="submit">Save sermon notes</button><button type="button" id="sermonCancel">Clear form</button></div>
+              <p class="sermon-status" id="sermonStatus" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+          <section id="notebook" class="sermon-library">
+            <span class="eyebrow">YOUR PRIVATE COLLECTION</span><h2>Notebook</h2><p>Search saved messages or edit an entry to add a reflection later.</p>
+            <div class="sermon-tools"><input id="sermonSearch" class="sermon-search" type="search" placeholder="Search title, Scripture, or notes" aria-label="Search sermon notes"><span class="sermon-count" id="sermonCount">0 ENTRIES</span></div>
+            <div id="sermonList" class="sermon-list"></div>
+            <div class="sermon-buttons"><button type="button" id="sermonExport">Export as text file</button></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="sermon-notes-core.js"></script>
+  <script src="app.js"></script>
+  <script src="sermon-notes.js"></script>
+</body>
+</html>
